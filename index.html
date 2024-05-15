@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Make me fat</title>
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="js/game.js" defer></script>
+    <script src="js/index.js" defer></script>
+  </head>
+  <body>
     <div id="game-start">
-        <h1>Make me fat</h1>
-        <img src="images/HomerMain.png" alt="HomerEatingADonut">
-        <p>Eat the donuts to make me fat</p>
-        <p>Use the arrow keys to move me</p>
-        <p>Don't let me touch the apples and oranges, ew!</p>
-        <p>Press the start button to begin</p>
-        <p>Good luck!</p>
+      <h1>Make me fat</h1>
+      <img src="images/HomerMain.png" alt="HomerEatingADonut" />
+      <p>Eat the donuts to make me fat</p>
+      <p>Use the arrow keys to move me</p>
+      <p>Don't let me touch the apples and oranges, ew!</p>
+      <p>Press the start button to begin</p>
+      <p>Good luck!</p>
+      <button id="btn-start">Start</button>
+    </div>
+    <div id="game-on">
+      <div id="game-scores">
         <h2>Score: <span id="score">0</span></h2>
         <h2>High score: <span id="high-score">0</span></h2>
-        <button id="btn-start">Start</button>
+      </div>
+      <canvas id="game-screen"></canvas>
     </div>
-    <div id="game-on"></div>
     <div id="game-over"></div>
-</body>
+  </body>
 </html>

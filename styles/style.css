@@ -1,38 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 body {
-    font-family: 'Press Start 2P', cursive;
-    background-color: #fff;
-    color: #000;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    line-height: 2;
-    font-size: 16px;
+  font-family: "Press Start 2P", cursive;
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  line-height: 2;
+  font-size: 16px;
 }
 
 #game-start {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 #game-start h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 #game-start button {
-    margin-top: 5vh;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+  margin-top: 5vh;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#game-on {
+  display: none;
+  flex-direction: column;
+  width: 100vw;
+  padding: 20px 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-scores {
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding: 20px 0px;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+#game-screen {
+  display: none;
+  align-content: center;
+  padding: 20px 0px;
+  overflow: hidden;
+  position: relative;
+  background-image: url(../images/BlueDonutSky.png);
+  background-size: cover;
+  animation: slide 5s linear infinite;
+  height: 800px;
+  width: 500px;
+}
+
+@keyframes slide {
+  0% {
+    background-position: 0 100px;
+  }
+  100% {
+    background-position: 0 900px;
+  }
 }
