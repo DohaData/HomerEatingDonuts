@@ -80,3 +80,35 @@ body {
     background-position: 0 900px;
   }
 }
+
+#game-over {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+  color: #fff;
+}
+
+#game-over h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+#game-over button {
+  margin-top: 5vh;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#game-over img {
+  height: 70vh;
+}

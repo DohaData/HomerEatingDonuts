@@ -10,12 +10,16 @@ window.onload = function () {
     image.src = `./images/Obstacle${index + 1}.png`;
   });
 
+  const allScores = [];
+
   const startButton = document.getElementById("btn-start");
   const gameStartContainer = document.getElementById("game-start");
   const gameOnContainer = document.getElementById("game-on");
   const gameScoresContainer = document.getElementById("game-scores");
   const gameScreenContainer = document.getElementById("game-screen");
   const gameOverContainer = document.getElementById("game-over");
+  const finalScore = document.getElementById("final-score");
+  const restartButton = document.getElementById("btn-restart");
 
   startButton.addEventListener("click", () => {
     gameStartContainer.style.display = "none";
@@ -23,7 +27,12 @@ window.onload = function () {
     gameScoresContainer.style.display = "flex";
     gameScreenContainer.style.display = "block";
 
-    const game = new HomerEatingDonutsGame(homerImage, donutImage, fruitImages);
+    const game = new HomerEatingDonutsGame(
+      homerImage,
+      donutImage,
+      fruitImages,
+      allScores.length ? Math.max(...allScores) : 0
+    );
 
     // Function that handles keydown event
     function handleKeydown(event) {
@@ -47,5 +56,22 @@ window.onload = function () {
       }
     }
     window.addEventListener("keydown", handleKeydown);
+
+    intervalId = setInterval(() => {
+      if (game.gameOver) {
+        clearInterval(intervalId);
+        gameOnContainer.style.display = "none";
+        gameScoresContainer.style.display = "none";
+        gameScreenContainer.style.display = "none";
+        gameOverContainer.style.display = "flex";
+        finalScore.innerText = game.score;
+        allScores.push(game.score);
+      }
+    }, 1000 / 60);
+  });
+
+  restartButton.addEventListener("click", () => {
+    gameOverContainer.style.display = "none";
+    gameStartContainer.style.display = "flex";
   });
 };

@@ -1,8 +1,9 @@
 class HomerEatingDonutsGame {
-  constructor(homerImage, donutImage, fruitImages) {
+  constructor(homerImage, donutImage, fruitImages, highScore) {
     this.homerImage = homerImage;
     this.donutImage = donutImage;
     this.fruitImages = fruitImages;
+    this.highScore = highScore;
     this.canvas = document.getElementById("game-screen");
     this.ctx = this.canvas.getContext("2d");
     this.canvas.width = 500;
@@ -34,7 +35,6 @@ class HomerEatingDonutsGame {
   }
 
   update() {
-
     for (let donutIndex = 0; donutIndex < this.donuts.length; donutIndex++) {
       const donut = this.donuts[donutIndex];
       donut.update();
@@ -50,16 +50,16 @@ class HomerEatingDonutsGame {
     }
 
     for (let fruitIndex = 0; fruitIndex < this.fruits.length; fruitIndex++) {
-        const fruit = this.fruits[fruitIndex];
-        fruit.object.update();
-        if (this.homer.isColliding(fruit)) {
-            this.gameOver = true;
-            console.log("game over");
-        }
-        if (fruit.object.isOutOfScreen()) {
-            this.fruits.splice(fruitIndex, 1);
-            fruitIndex--;
-        }
+      const fruit = this.fruits[fruitIndex];
+      fruit.object.update();
+      if (this.homer.isColliding(fruit.object)) {
+        this.gameOver = true;
+        console.log("game over");
+      }
+      if (fruit.object.isOutOfScreen()) {
+        this.fruits.splice(fruitIndex, 1);
+        fruitIndex--;
+      }
     }
 
     if (Math.random() < 0.01) {
@@ -87,6 +87,8 @@ class HomerEatingDonutsGame {
     );
     const scoreElement = document.getElementById("score");
     scoreElement.textContent = `${this.score}`;
+    const highScoreElement = document.getElementById("high-score");
+    highScoreElement.textContent = `${this.highScore}`;
   }
 }
 
