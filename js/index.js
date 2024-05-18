@@ -37,7 +37,6 @@ window.onload = function () {
     // Function that handles keydown event
     function handleKeydown(event) {
       const key = event.key;
-      console.log("key", key);
       const possibleKeystrokes = ["ArrowLeft", "ArrowRight"];
 
       // Check if the pressed key is in the possibleKeystrokes array

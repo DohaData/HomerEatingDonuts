@@ -54,7 +54,6 @@ class HomerEatingDonutsGame {
       fruit.object.update();
       if (this.homer.isColliding(fruit.object)) {
         this.gameOver = true;
-        console.log("game over");
       }
       if (fruit.object.isOutOfScreen()) {
         this.fruits.splice(fruitIndex, 1);
