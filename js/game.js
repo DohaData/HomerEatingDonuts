@@ -1,5 +1,5 @@
 const donutProbability = 0.01;
-const fruitProbability = 0.012;
+const fruitProbability = 0.01;
 
 class HomerEatingDonutsGame {
   constructor(
