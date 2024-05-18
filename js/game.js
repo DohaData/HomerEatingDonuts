@@ -66,7 +66,7 @@ class HomerEatingDonutsGame {
         new ObjectsComingFromTheSky(this.canvas.width, this.canvas.height)
       );
     }
-    if (Math.random() < 0.015) {
+    if (Math.random() < 0.012) {
       this.fruits.push({
         name: Math.random() < 0.5 ? 0 : 1,
         object: new ObjectsComingFromTheSky(
@@ -97,7 +97,7 @@ class Homer {
     this.height = 50;
     this.x = gameWidth / 2 - this.width / 2;
     this.y = gameHeight - this.height;
-    this.speed = 15;
+    this.speed = 20;
     this.gameWidth = gameWidth;
     this.gameHeight = gameHeight;
   }
