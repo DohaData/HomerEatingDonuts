@@ -1,5 +1,14 @@
 # HomerEatingDonuts
 
+![Homer Eating Donuts](./screenshots/HomerIntroGif.gif)
+
+## Table of Contents
+- [Description](#description)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+
 ## Description
 This is a game coded using javascript canvas and html. The game is about Homer Simpson eating donuts. The game is simple, you have to move Homer to eat the donuts that are falling from the sky. If you eat a donut you get a point, if you eat a fruit the game is over. The game has a start screen and a game over screen.
 
