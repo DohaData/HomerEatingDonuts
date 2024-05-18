@@ -18,7 +18,9 @@ window.onload = function () {
   const gameScoresContainer = document.getElementById("game-scores");
   const gameScreenContainer = document.getElementById("game-screen");
   const gameOverContainer = document.getElementById("game-over");
-  const finalScore = document.getElementById("final-score");
+  const scoreElement = document.getElementById("score");
+  const highScoreElement = document.getElementById("high-score");
+  const finalScoreElement = document.getElementById("final-score");
   const restartButton = document.getElementById("btn-restart");
 
   startButton.addEventListener("click", () => {
@@ -31,6 +33,9 @@ window.onload = function () {
       homerImage,
       donutImage,
       fruitImages,
+      gameScreenContainer,
+      scoreElement,
+      highScoreElement,
       allScores.length ? Math.max(...allScores) : 0
     );
 
@@ -63,7 +68,7 @@ window.onload = function () {
         gameScoresContainer.style.display = "none";
         gameScreenContainer.style.display = "none";
         gameOverContainer.style.display = "flex";
-        finalScore.innerText = game.score;
+        finalScoreElement.innerText = game.score;
         allScores.push(game.score);
       }
     }, 1000 / 60);

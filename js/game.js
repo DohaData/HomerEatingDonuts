@@ -1,26 +1,29 @@
+const donutProbability = 0.01;
+const fruitProbability = 0.012;
+
 class HomerEatingDonutsGame {
-  constructor(homerImage, donutImage, fruitImages, highScore) {
+  constructor(
+    homerImage,
+    donutImage,
+    fruitImages,
+    gameScreenContainer,
+    scoreElement,
+    highScoreElement,
+    highScore
+  ) {
     this.homerImage = homerImage;
     this.donutImage = donutImage;
     this.fruitImages = fruitImages;
+    this.canvas = gameScreenContainer;
+    this.scoreElement = scoreElement;
+    this.highScoreElement = highScoreElement;
     this.highScore = highScore;
-    this.canvas = document.getElementById("game-screen");
     this.ctx = this.canvas.getContext("2d");
     this.canvas.width = 500;
     this.canvas.height = 800;
     this.homer = new Homer(this.canvas.width, this.canvas.height);
     this.donuts = [];
-    this.donuts.push(
-      new ObjectsComingFromTheSky(this.canvas.width, this.canvas.height)
-    );
     this.fruits = [];
-    this.fruits.push({
-      name: Math.random() < 0.5 ? 0 : 1,
-      object: new ObjectsComingFromTheSky(
-        this.canvas.width,
-        this.canvas.height
-      ),
-    });
     this.score = 0;
     this.gameOver = false;
     this.gameLoop();
@@ -61,12 +64,12 @@ class HomerEatingDonutsGame {
       }
     }
 
-    if (Math.random() < 0.01) {
+    if (Math.random() < donutProbability) {
       this.donuts.push(
         new ObjectsComingFromTheSky(this.canvas.width, this.canvas.height)
       );
     }
-    if (Math.random() < 0.012) {
+    if (Math.random() < fruitProbability) {
       this.fruits.push({
         name: Math.random() < 0.5 ? 0 : 1,
         object: new ObjectsComingFromTheSky(
@@ -84,10 +87,8 @@ class HomerEatingDonutsGame {
     this.fruits.forEach((fruit) =>
       fruit.object.draw(this.ctx, this.fruitImages[fruit.name])
     );
-    const scoreElement = document.getElementById("score");
-    scoreElement.textContent = `${this.score}`;
-    const highScoreElement = document.getElementById("high-score");
-    highScoreElement.textContent = `${this.highScore}`;
+    this.scoreElement.textContent = `${this.score}`;
+    this.highScoreElement.textContent = `${this.highScore}`;
   }
 }
 
