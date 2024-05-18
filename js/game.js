@@ -94,7 +94,7 @@ class HomerEatingDonutsGame {
 
 class Homer {
   constructor(gameWidth, gameHeight) {
-    this.width = 100;
+    this.width = 80;
     this.height = 50;
     this.x = gameWidth / 2 - this.width / 2;
     this.y = gameHeight - this.height;
