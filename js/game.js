@@ -98,7 +98,7 @@ class Homer {
     this.height = 50;
     this.x = gameWidth / 2 - this.width / 2;
     this.y = gameHeight - this.height;
-    this.speed = 10;
+    this.speed = 15;
     this.gameWidth = gameWidth;
     this.gameHeight = gameHeight;
   }
