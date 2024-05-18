@@ -1,6 +1,8 @@
 # HomerEatingDonuts
 
-![Homer Eating Donuts](./screenshots/HomerIntroGif.gif)
+<p align="center">
+    <img src="./screenshots/HomerIntroGif.gif" alt="Homer Eating Donuts">
+</p>
 
 ## Table of Contents
 - [Description](#description)
